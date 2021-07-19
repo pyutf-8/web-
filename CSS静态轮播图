@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS静态轮播图</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        .slide{
+            width: 250px;
+            height: 200px;
+            border: 1px solid red;
+            position: relative;
+            margin: 50px auto;
+        }
+        /*用于嵌套的元素*/
+        .slide .pic li{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .slide .pic li img{
+            width: 250px;
+            height: 200px;
+        }
+        /* 箭头部分*/
+        .slide .sign li{
+            position: absolute;
+            top: 50%;/*元素本身会占据位置 不会完全在中间*/
+            transform: translateY(-50%); /* 元素对于本身纵向平移50%*/
+            width:40px;
+            height: 40px;
+            font-size: 30px;
+            line-height: 40px;
+            cursor:pointer;
+            text-align: center;
+
+        }
+        .slide .sign li:hover{
+            background-color: aqua;
+            opacity: 0.5;
+            border-radius: 5px;
+        }
+        /* 圆圈部分*/
+        .slide .circle {
+            position: absolute;
+            bottom:10px ;
+            left:50%;
+            transform: translateX(-50%);/* 元素对于本身横向平移50%*/
+        }
+        .slide .circle li{
+            float: left;
+            width: 10px;
+            height: 10px;
+
+            margin-left: 5px;
+            border-radius: 50%;/* 50%就是圆圈*/
+            background-color: aquamarine;
+            cursor: pointer;
+        }
+        .slide .circle li:hover{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+
+<div class="slide">
+    <!-- 图片部分-->
+    <ul class="pic">
+        <li><img src="../image/1.jpg" alt="1"></li>
+        <li><img src="../image/20.jpg" alt="20"></li>
+        <li><img src="../image/40.jpg" alt="40"> </li>
+        <li><img src="../image/73.jpg" alt="61"></li>
+    </ul>
+    <!--括号部分-->
+    <ul class="sign">
+        <li style="left:0">&lt;</li>
+        <li style="right: 0">&gt;</li>
+    </ul>
+    <!--圆圈画面-->
+    <ul class="circle">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+
+</body>
+</html>
